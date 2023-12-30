@@ -1,7 +1,5 @@
 //day 22
-/**
- * @return {null|boolean|number|string|Array|Object}
- */
+
 Array.prototype.last = function() {
     if (this.length === 0) {
   return -1;
@@ -10,16 +8,9 @@ Array.prototype.last = function() {
 }
 };
 
-/**
-* const arr = [1, 2, 3];
-* arr.last(); // 3
-*/
 
 //day 23
-/**
- * @param {Function} fn
- * @return {Object}
- */
+
 Array.prototype.groupBy = function(fn) {
     return this.reduce((map, c)=>{
         const id=fn(c);
@@ -27,37 +18,23 @@ Array.prototype.groupBy = function(fn) {
       return map;
     },{});
 };
-/**
- * [1,2,3].groupBy(String) // {"1":[1],"2":[2],"3":[3]}
- */
+/
 
 //day 24
-/**
- * @param {Array} arr
- * @param {Function} fn
- * @return {Array}
- */
+
 var sortBy = function(arr, fn) {
     return arr.sort((a ,b) => fn(a) - fn(b));
 };
 
 //day 25
-/**
- * @param {Array} arr1
- * @param {Array} arr2
- * @return {Array}
- */
+
 var join = function(arr1, arr2) {
     let map={},arrs=[...arr1,...arr2].map((e)=> map[e.id]={...map[e.id],...e})
    return [...Object.values(map)]
 };
 
 //day 26
-/**
- * @param {Array} arr
- * @param {number} depth
- * @return {Array}
- */
+
 var flat = function (arr, n) {
     if (n === 0) {
        return arr;
@@ -77,10 +54,7 @@ var flat = function (arr, n) {
 };
 
 //day 27
-/**
- * @param {Object|Array} obj
- * @return {Object|Array}
- */
+
 var compactObject = function(obj) {
     if(Array.isArray(obj)){
       for(let i = 0;i< obj.length;i++){
@@ -108,12 +82,7 @@ var compactObject = function(obj) {
 };
 //day 28
 class EventEmitter {
-    
-    /**
-     * @param {string} eventName
-     * @param {Function} callback
-     * @return {Object}
-     */
+  
     subscribe(eventName, callback) {
         const item = { id: Math.floor(Math.random() * 1000), callback };
         
@@ -129,11 +98,7 @@ class EventEmitter {
         };
     }
     
-    /**
-     * @param {string} eventName
-     * @param {Array} args
-     * @return {Array}
-     */
+   
     emit(eventName, args = []) {
           const result = [];
         
@@ -149,17 +114,6 @@ class EventEmitter {
     }
 }
 
-/**
- * const emitter = new EventEmitter();
- *
- * // Subscribe to the onClick event with onClickCallback
- * function onClickCallback() { return 99 }
- * const sub = emitter.subscribe('onClick', onClickCallback);
- *
- * emitter.emit('onClick'); // [99]
- * sub.unsubscribe(); // undefined
- * emitter.emit('onClick'); // []
- */
 
 //day 29
 
@@ -174,13 +128,7 @@ ArrayWrapper.prototype.valueOf = function() {
 ArrayWrapper.prototype.toString = function() {
     return '[' + this.nums.toString() + ']';
 };
-/**
- * const obj1 = new ArrayWrapper([1,2]);
- * const obj2 = new ArrayWrapper([3,4]);
- * obj1 + obj2; // 10
- * String(obj1); // "[1,2]"
- * String(obj2); // "[3,4]"
- */
+
 
 //day 30
 
